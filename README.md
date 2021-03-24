@@ -7,7 +7,7 @@ Esse projeto tem por objetivo o desenvolvimento de uma plataforma de dados meteo
 ![Baia de instrumentação](./baia-de-instrumentos.jpg)
 Seguindo os conceitos de sensor autônomo e internet das coisas (IoT), foi projetada e construída uma estação meteorológica com microcontrolador ESP8266, programado em C/C++® no ambiente Arduino®, e inicialmente com os sensores de direção do vento, temperatura, umidade, pressão, pluviômetro e anemômetro, posteriormente serão implementados sensores de radiação solar direta e global, através de comunicação serial também é possível a implementação de sensores para monitorar a geração de energia, a estação processa os dados desses sensores, envia para internet através de conexão Wi-Fi® e também armazena localmente em cartão de memória.
 
-Os esquemas elétricos para montagem da estação podem ser acessados no diretório [esquema-eletrico](github.com/romildodcm/plataforma-de-dados-meteorologicos/tree/main/esquema-eletrico) e os códigos para os microcontroladores estão no diretório [códigos](github.com/romildodcm/plataforma-de-dados-meteorologicos/tree/main/codigos), no projeto o circuito foi confeccionado usando uma placa ilhada, abaixo estão as tabelas com materiais necessários, esses sistemas foram integrados e montados na estrutura da estação, como pode ser visto nas imagens, os arquivos com as peças e montagem com o programa *Inventor* estão no diretório [estuturas](github.com/romildodcm/plataforma-de-dados-meteorologicos/tree/main/estuturas).
+Os esquemas elétricos para montagem da estação podem ser acessados no diretório [esquema-eletrico](github.com/romildodcm/plataforma-de-dados-meteorologicos/tree/main/esquema-eletrico) e os códigos para os microcontroladores estão no diretório [códigos](https://github.com/romildodcm/plataforma-de-dados-meteorologicos/tree/main/codigos), no projeto o circuito foi confeccionado usando uma placa ilhada, abaixo estão as tabelas com materiais necessários, esses sistemas foram integrados e montados na estrutura da estação, como pode ser visto nas imagens, os arquivos com as peças e montagem com o programa *Inventor* estão no diretório [estuturas](github.com/romildodcm/plataforma-de-dados-meteorologicos/tree/main/estuturas).
 
 Tabela 1: Lista de componentes eletrônicos e alojamentos da Estação Meteorológica.
 Quantidade | Componente | Valor unitário (R$)
@@ -119,9 +119,6 @@ FAMÍLIA, AMIGOS, PROFESSORES, JOYLAN E LUCAS TESKE
 - [ ] Dados de contato e licença;
 - [ ] Agradecimentos;
 
-configuração grafana, influx, etc
-https://diyi0t.com/visualize-mqtt-data-with-influxdb-and-grafana/
-ver se implemento a opção de adicionar senhas, etc.
 
 LOGO UNILA, GEPEN, CNPQ
 
