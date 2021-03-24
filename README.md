@@ -82,7 +82,7 @@ Quantidade | Componente | Valor unitário (R$)
 
 ![Dashboard Grafana](./grafana.png)
 
-O banco de dados e a interface de usuário foram implementados em um Raspberry Pi® utilizado como servidor, onde um algoritmo em Python® faz o recebimento e processamento dos dados que são colocados em banco InfluxDB®, nesse servidor foi implementada com Grafana® uma interface gráfica que é acessada por usuários através de um navegador web, sendo apresentados os parâmetros atualizados e séries temporais, como mostra a figura acima. No diretório [estruturacodigos/raspberry_pi](./raspberry_pi) é possível ver o script implementado e a documentação que apresenta como fazer a implementação dessa parte do projeto.
+O banco de dados e a interface de usuário foram implementados em um Raspberry Pi® utilizado como servidor, onde um algoritmo em Python® faz o recebimento e processamento dos dados que são colocados em banco InfluxDB®, nesse servidor foi implementada com Grafana® uma interface gráfica que é acessada por usuários através de um navegador web, sendo apresentados os parâmetros atualizados e séries temporais, como mostra a figura acima. No diretório [codigos/raspberry_pi](./codigos/raspberry_pi) é possível ver o script implementado e a documentação que apresenta como fazer a implementação dessa parte do projeto.
 
 Tabela 3: Lista de Materiais para o Servidor.
 Quantidade | Componente | Valor unitário (R$)
