@@ -18,6 +18,8 @@ dadosMQTT[8] = sd_status
 
 Then the data is verified and prepared in a JSON that is sent
 to the InfluxDB database.
+
+reference: https://diyi0t.com/visualize-mqtt-data-with-influxdb-and-grafana/
 """
 import paho.mqtt.client as mqtt
 from influxdb import InfluxDBClient

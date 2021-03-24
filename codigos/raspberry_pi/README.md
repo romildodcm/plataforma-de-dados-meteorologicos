@@ -1,6 +1,6 @@
 # Configuração Script, InfluxDB e Grafana
 ### Configuração Script e InfluxDB
-Esse script em Python faz a conexão entre o servidor MQTT e o banco de dados, no topo do arquivo [script.py](./script.py) tem uma descrição de como isso é feito. Para o funcionamento desse código, é necessário instalar as bibliotecas utilizadas, que a estação meteorológica já esteja enviando dados para o servidor MQTT e que o banco de dados InfluxDB já esteja configurado com o nome **ws_test** (caso escolha outro nome, terá que mudar isso no script Python e no Grafana), antes de executar o script, adicione os parâmetros de conexão com MQTT e também InfluxDB, após isso, ao fazer uma simples execução, aparecerá na linha de comando um output do tipo:
+Esse script em Python faz a conexão entre o servidor MQTT e o banco de dados, no topo do arquivo [script.py](https://github.com/romildodcm/plataforma-de-dados-meteorologicos/blob/main/codigos/raspberry_pi/script.pyy) tem uma descrição de como isso é feito. Para o funcionamento desse código, é necessário instalar as bibliotecas utilizadas, que a estação meteorológica já esteja enviando dados para o servidor MQTT e que o banco de dados InfluxDB já esteja configurado com o nome **ws_test** (caso escolha outro nome, terá que mudar isso no script Python e no Grafana), antes de executar o script, adicione os parâmetros de conexão com MQTT e também InfluxDB, após isso, ao fazer uma simples execução, aparecerá na linha de comando um output do tipo:
 
 ```
 MQTT-InfluxDB

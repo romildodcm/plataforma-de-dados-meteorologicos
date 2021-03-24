@@ -5,7 +5,7 @@
   * 
   * Version: 2.6 (20210202)
   * Developer: Romildo C Marques
-  * E-mail: contato@romildo.me
+  * E-mail: romildodcm@gmail.com
   * 
   * OUTPUT DATA DESCRIPTION
   * 
