@@ -56,20 +56,21 @@ Quantidade | Componente | Valor unitário (R$)
 1 | 3m Tubo quadrado alumínio 3/4 X 1/16 (1,9cm X 1,58mm) | 25,00
 1 | Chapa de aço 2mmx80x60mm | 5,00
 1 | Haste De Cobre Puro 10 mm X 500 mm | 50,00
-1 | borracha espessura 1x80x20mm | 5,00
-7 | Parafuso m3 x 15mm | 0,12
-3 | Parafuso m3 x 25mm | 0,25
-1 | Parafuso m5 x 25mm | 0,30
+1 | Borracha espessura 1x80x20mm | 5,00
 3 | Espaçador m3 x 15mm | 0,30
-2 | Barra roscada m6 ou 3/8 x 100mm | 2,50
-2 | Parafuso sextavado m6 ou 3/8 x 16mm | 0,30
-4 | Parafuso sextavado m6 ou 3/8 x 30mm | 0,30
-28 | Porca sextavada m6 ou 3/8 x 30mm | 0,10
-28 | ruela de metal m6 ou 3/8 | 0,15
-6 | ruela de borracha m6 ou 3/8 | 0,15
-4 | Parafuso Sextavado Phillips NC9/64 x 1/4 | 0,10
-3 | Abraçadeira Tipo "U" - 35 Fita 16 Aço Carbono | 9,10
-4 | Abraçadeira Tipo "U" - 35 Fita 16 Aço Carbono 58mm comprimento | 11,15
+7 | Parafuso m3 x 15mm | 0,12
+7 | Parafuso m3 x 6mm | 0,10
+1 | Parafuso m5 x 16mm | 0,20
+2 | Barra roscada 1/4 x 100mm | 2,50
+2 | Parafuso sextavado 1/4 x 16mm | 0,30
+2 | Parafuso sextavado 1/4 x 30mm | 0,30
+24 | Porca sextavada 1/4 | 0,10
+20 | Ruela de metal m6 ou 1/4| 0,15
+2 | Ruela de metal m3 | 0,10
+4 | Ruela de borracha m6 ou 1/4 | 0,25
+2 | Anel de borracha m6 | 0,15
+6 | Abraçadeira U Vergalhão bitola 1 polegada 80mm rosca 1 quarto (Part. 0070.1) | 6,00
+4 | Abraçadeira suporte (Part. 0070.2) | 4,10
 
 ***Observações**:
 * Na lista e no projeto não estão inclusos estrutura para fixação do painel solar, essa pode ser construída ou comprada, variando de acordo com o tipo de instalação, como pode ser visto na imagem, aqui ela foi fixada em uma cantoneira metálica e essa foi parafusada sobre a cobertura da casa;
