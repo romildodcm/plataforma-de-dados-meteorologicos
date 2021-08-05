@@ -96,7 +96,7 @@ Quantidade | Componente | Valor unitário (R$)
 
 Esse projeto foi desenvolvido por Romildo C Marques¹, aluno de engenharia física (UNILA), sendo orientado pelo prof. Oswaldo Hideo Ando Junior² (GPEnSE) da Universidade Federal da Integração Latino-Americana (UNILA).
 
-Contato¹: romildo.marques@aluno.unila.edu.br
+Contato¹: romildodcm@gmail.com
 Contato²: oswaldo.junior@unila.edu.br
 
 ## APOIO E FOMENTO
