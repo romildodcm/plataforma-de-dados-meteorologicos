@@ -42,6 +42,7 @@
   * Rain gauge -> PCINT1    (Pin 6)
   * Anemometer -> EI0       (Pin 7)
   * VCC ->                  (Pin 8)
+  * 
 *****************************************************************/
 
 // SendOnlySoftwareSerial library and seting

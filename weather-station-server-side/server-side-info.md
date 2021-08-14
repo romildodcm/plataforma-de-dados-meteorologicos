@@ -26,13 +26,15 @@ Ao completar a instalação do banco de dados, o mesmo deverá ser acessado atra
 
 Esse projeto foi implementado com o banco de dados InfluxDB, para instalar esse banco de dados, acesse https://portal.influxdata.com/downloads/, instale também o influxdb-client com o comando *udo apt install influxdb-client*. Para saber mais sobre o uso do InfluxDB e uma base de como funciona a integração entre Python e InfluxDB, e também sobre a configuração do Grafana, veja a publicação disponível em https://diyi0t.com/visualize-mqtt-data-with-influxdb-and-grafana/, vale lembrar que a instalação do influxDB apresentada nesse segundo link não garante que será a versão 1.8 (necessária para ser compatível com o script python).
 
-Nessa etapa, o nome padrão escolhido para o banco de dados foi **weather_stations_data**, também foi criado um usuário **putdata** para adicionar dados com o script em Python e o **getdata** que será utilizado pelo Grafana para solicitar dados. Caso escolha nomes diferentes, implemente as alterações nas próximas etapas, mudando isso no arquivo [**.env**](./.env) e no **Grafana**, também deverá inserir neles as senhas dos respectivos usuários para acesso ao banco de dados.
+Nessa etapa, o nome padrão escolhido para o banco de dados foi **weather_stations_data**, também foi criado um usuário **putdata** para adicionar dados com o script em Python e o **getdata** que será utilizado pelo Grafana para solicitar dados. Caso escolha nomes diferentes, implemente as alterações nas próximas etapas, mudando isso no arquivo [**.env**](./.env) e no **Grafana**.
+
+Para implementar atualizações, gerenciar o banco de dados, etc, verifique a documentação em [InfluxDB OSS 1.8 Documentation](https://docs.influxdata.com/influxdb/v1.8/).
 
 ## Configuração de parâmetros para o script Python e Crontab
 
 O script em Python 3 é responsável por receber os dados via MQTT, processar eles e armazenar no banco de dados, para ele ser executado é necessário ter instaladas as bibliotecas que estão citadas nas primeiras linhas de [**script.py**](./script.py) e também ter no mesmo diretório o [**weather_station.py**](./weather_station.py) e o arquivo [**.env**](./.env) com parâmetros de configuração.
 
-Em [**script.py**](./script.py) está o básico do programa, como receber os dados, fazer uma breve verificação e passar para as funções do [**weather_station.py**](./weather_station.py), que farão o resto do processamento e retornarão uma lista de dicionários, compatíveis com o tipo JSON, e esta é enviada para o banco de dados. As senhas, e o endereço de IP do banco de dados no Raspberry Pi/Servidor, credenciais do banco de dado e MQTT devem ser inseridas no arquivo [**.env**](./.env), esses três arquivos estando na mesma pasta, já é possível executar para testes, durante a execução o programa retorna as saídas abaixo:
+Em [**script.py**](./script.py) está o básico do programa, como receber os dados, fazer uma breve verificação e passar para as funções do [**weather_station.py**](./weather_station.py), que farão o resto do processamento e retornarão uma lista de dicionários, compatíveis com o tipo JSON, e esta é enviada para o banco de dados. As senhas, e o endereço de IP do banco de dados no Raspberry Pi/Servidor, credenciais do banco de dado e MQTT devem ser inseridas no arquivo [**.env**](./.env), esses trÊs arquivos estando na mesma pasta, já é possível executar para testes, durante a execução o programa retorna as saídas abaixo:
 
 ```
 MQTT to InfluxDB script
@@ -99,7 +101,7 @@ Em [Visualize MQTT Data with InfluxDB and Grafana](https://diyi0t.com/visualize-
 ![Add via json 1](./img/grafana-dashboard-via-json-1.png)
 ![Add via json 2](./img/grafana-dashboard-via-json-2.png)
 
-Observação: a base/banco de dados **weather_stations_data** deverá ser configurada como padrão/default no grafana.`
+Observação: a base/banco de dados **weather_stations_data** deverá ser configurada como padrão/default no grafana.
 
 ## MQTT
 

@@ -114,6 +114,7 @@ String serial_data_request(String sensor_id = "")
         // Serial.println();
 
         wait_for_request = millis();
+        // while (((millis() - wait_for_request) < 2000) && !Serial.available())
         while ((abs(millis() - wait_for_request) < 2000) && !Serial.available())
         {
             // #DEBUG
@@ -319,6 +320,7 @@ String get_time_RTC()
 ************************************************************/
 String eeprom_time(String time_string = "")
 {
+    // EEPROM.begin(256);  // Begin the EEPROM with 256 bytes size
     EEPROM.begin(512);  // Begin the EEPROM with 512 bytes size
     int byte_size = 14; // time string length bytes
 
@@ -543,6 +545,7 @@ String get_attiny_data()
         digitalWrite(0, LOW);
         // delay for ATtiny85 data processing
         begin_delay = millis();
+        // while (((millis() - begin_delay) < 7000) && !Serial.available())
         while ((abs(millis() - begin_delay) < 7000) && !Serial.available())
         {
             // #DEBUG
@@ -694,8 +697,8 @@ void setup()
 
         Serial.print("RTC update status (1 for updated and 0 for not): ");
         // The parameter is the interval between updates
-        Serial.println(rtc_time_update(5));
-        Serial.println("Interval between updates: 5 days");
+        Serial.println(rtc_time_update(7));
+        Serial.println("Interval between updates: 7 days");
         delay(300);
     }
     else
@@ -869,7 +872,7 @@ void loop()
     }
 
     // Calculates the interval of sleepmode
-    sleep_time = (millis() - begin_time);
+    sleep_time = millis() - begin_time;
     if (sleep_time < 0)
     {
         sleep_time = 59000;
@@ -880,6 +883,7 @@ void loop()
     }
     else
     {
+        // sleep_time = 59000 - sleep_time;
         sleep_time = abs(59000 - sleep_time);
     }
     Serial.print("Sleep time: ");

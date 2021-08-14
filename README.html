@@ -1,0 +1,810 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Lattes\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.22\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="plataforma-de-dados-meteorol%C3%B3gicos">PLATAFORMA DE DADOS METEOROL&#xD3;GICOS</h1>
+
+<p>Esse projeto tem por objetivo o desenvolvimento de uma plataforma de dados meteorol&#xF3;gicos composta por esta&#xE7;&#xF5;es meteorol&#xF3;gicas, banco de dados e interface gr&#xE1;fica para an&#xE1;lise e monitoramento. Espera-se com esse trabalho formar uma base de dados que permitir&#xE1; a elabora&#xE7;&#xE3;o de estudos e previs&#xE3;o de gera&#xE7;&#xE3;o de energia solar que podem ser aplicados para verificar a viabilidade de instala&#xE7;&#xE3;o de usinas solares, essa plataforma tamb&#xE9;m poder&#xE1; ser instalada junto de uma unidade geradora para auxiliar no monitoramento de gera&#xE7;&#xE3;o, previs&#xF5;es e aux&#xED;lio na tomada de decis&#xF5;es. Por se tratar de um projeto open source, almeja-se tamb&#xE9;m contribuir com a redu&#xE7;&#xE3;o de obst&#xE1;culos e custos para dissemina&#xE7;&#xE3;o e divulga&#xE7;&#xE3;o tecnol&#xF3;gica desse tipo de tecnologia.</p>
+<p><img src="./img/projeto.jpg" alt="Projeto"></p>
+<h2 class="mume-header" id="esta%C3%A7%C3%A3o-meteorol%C3%B3gica">ESTA&#xC7;&#xC3;O METEOROL&#xD3;GICA</h2>
+
+<p><img src="./img/baia-de-instrumentos-v2.jpg" alt="Baia de instrumenta&#xE7;&#xE3;o"><br>
+Seguindo os conceitos de sensor aut&#xF4;nomo e internet das coisas (IoT), foi projetada e constru&#xED;da uma esta&#xE7;&#xE3;o meteorol&#xF3;gica com microcontrolador ESP8266, programado em C/C++&#xAE; no ambiente Arduino&#xAE;, e inicialmente com os sensores de dire&#xE7;&#xE3;o do vento, temperatura, umidade, press&#xE3;o, pluvi&#xF4;metro e anem&#xF4;metro, posteriormente ser&#xE3;o implementados sensores de radia&#xE7;&#xE3;o solar direta e global, atrav&#xE9;s de comunica&#xE7;&#xE3;o serial tamb&#xE9;m &#xE9; poss&#xED;vel a implementa&#xE7;&#xE3;o de sensores para monitorar a gera&#xE7;&#xE3;o de energia, a esta&#xE7;&#xE3;o processa os dados desses sensores, envia para internet atrav&#xE9;s de conex&#xE3;o Wi-Fi&#xAE; e tamb&#xE9;m armazena localmente em cart&#xE3;o de mem&#xF3;ria.</p>
+<p>Os esquemas el&#xE9;tricos para montagem da esta&#xE7;&#xE3;o podem ser acessados no diret&#xF3;rio <em>esquema-eletrico</em> e os c&#xF3;digos para os microcontroladores est&#xE3;o no diret&#xF3;rio <em>software</em>, no projeto o circuito foi confeccionado usando uma placa ilhada, abaixo est&#xE3;o as tabelas com materiais necess&#xE1;rios, esses sistemas foram integrados e montados na estrutura da esta&#xE7;&#xE3;o, como pode ser visto nas imagens, os arquivos com as pe&#xE7;as e montagem com o programa <em>Inventor</em> est&#xE3;o no diret&#xF3;rio <em>estruturas</em>, tamb&#xE9;m devem ser inseridos em breve os arquivos do projeto/desenhos t&#xE9;cnicos em outros formatos.</p>
+<p>Tabela 1: Lista de componentes eletr&#xF4;nicos e alojamentos da Esta&#xE7;&#xE3;o Meteorol&#xF3;gica.</p>
+<table>
+<thead>
+<tr>
+<th>Quantidade</th>
+<th>Componente</th>
+<th>Valor unit&#xE1;rio (R$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bateria Estacion&#xE1;ria 7Ah</td>
+<td>109,90</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Painel Solar Fotovoltaico 30W</td>
+<td>189,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Controlador de Carga RTD1230 30A 12/24V</td>
+<td>170,00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Conector MC4 Painel Solar</td>
+<td>10,00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Metro cabo 4 mm&#xB2;</td>
+<td>5,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Metro fio 2,5 mm&#xB2; flex&#xED;vel</td>
+<td>2,00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Metro Cabo flex&#xED;vel 26 AWG</td>
+<td>0,37</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Caixa Pl&#xE1;stica PB-255/2</td>
+<td>79,90</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Pluvi&#xF4;metro</td>
+<td>344,61</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Indicador de dire&#xE7;&#xE3;o do vento</td>
+<td>284,63</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Anem&#xF4;metro</td>
+<td>263,970</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sensor de temperatura e umidade SHT20</td>
+<td>297,23</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Alojamento para sensor e temperatura e umidade</td>
+<td>250,74</td>
+</tr>
+<tr>
+<td>1</td>
+<td>RTC DS3231</td>
+<td>22,50</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sensor de press&#xE3;o e temperatura BMP280</td>
+<td>14,90</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Diodo 1N4007</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Borne Conector F 2EDGK-5,0 - 2 Vias</td>
+<td>1,99</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Borne Conector F 2EDGK-5,0 - 4 Vias</td>
+<td>3,70</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Borne Conector M 2EDGVC-5,0 4P 180&#xBA;</td>
+<td>1,75</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Wemos ESP8266</td>
+<td>50,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ATtiny85 DIP8</td>
+<td>17,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Soquete DIP8</td>
+<td>3,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mini chave HH Alavanca SMTS102 2 Posi&#xE7;&#xF5;es</td>
+<td>2,70</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Barra de Pinos 40 vias 11,2mm 180 graus</td>
+<td>1,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Barra de soquete header f&#xEA;mea 40 vias 180 graus</td>
+<td>1,65</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Cart&#xE3;o microSD com adaptador SD 8GB</td>
+<td>29,9</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Capacitor eletrol&#xED;tico 470uF</td>
+<td>0,50</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Capacitor cer&#xE2;mico 100nF</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor 220 Ohm 1/4W</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Resistor 330 Ohm 1/4W</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Resistor 1k Ohm 1/4W</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor 10k Ohm 1/4W</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Resistor 47k Ohm 1/4W</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Placa padr&#xE3;o tipo ilha 10x15 mm</td>
+<td>14,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Pe&#xE7;as impressas em 3D</td>
+<td>50,00</td>
+</tr>
+</tbody>
+</table>
+<p>Tabela 2: Lista de componentes da estrutura da esta&#xE7;&#xE3;o meteorol&#xF3;gica*.</p>
+<table>
+<thead>
+<tr>
+<th>Quantidade</th>
+<th>Componente</th>
+<th>Valor unit&#xE1;rio (R$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2,5m Tubo redondo alum&#xED;nio 1.1/4&quot; X 1/16&quot; (31,75mm X 1,58mm)</td>
+<td>39,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3m Tubo quadrado alum&#xED;nio 3/4 X 1/16 (1,9cm X 1,58mm)</td>
+<td>25,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Chapa de a&#xE7;o 2mmx80x60mm</td>
+<td>5,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Haste De Cobre Puro 10 mm X 500 mm</td>
+<td>50,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Borracha espessura 1x80x20mm</td>
+<td>5,00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Espa&#xE7;ador m3 x 15mm</td>
+<td>0,30</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Parafuso m3 x 15mm</td>
+<td>0,12</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Parafuso m3 x 6mm</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Parafuso m5 x 16mm</td>
+<td>0,20</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Barra roscada 1/4 x 100mm</td>
+<td>2,50</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Parafuso sextavado 1/4 x 16mm</td>
+<td>0,30</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Parafuso sextavado 1/4 x 30mm</td>
+<td>0,30</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Porca sextavada 1/4</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Ruela de metal m6 ou 1/4</td>
+<td>0,15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ruela de metal m3</td>
+<td>0,10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ruela de borracha m6 ou 1/4</td>
+<td>0,25</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Anel de borracha m6</td>
+<td>0,15</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Abra&#xE7;adeira U Vergalh&#xE3;o bitola 1 polegada 80mm rosca 1 quarto (Part. 0070.1)</td>
+<td>6,00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Abra&#xE7;adeira suporte (Part. 0070.2)</td>
+<td>4,10</td>
+</tr>
+</tbody>
+</table>
+<p>*<strong>Observa&#xE7;&#xF5;es</strong>:</p>
+<ul>
+<li>Na lista e no projeto n&#xE3;o est&#xE3;o inclusos estrutura para fixa&#xE7;&#xE3;o do painel solar, essa pode ser constru&#xED;da ou comprada, variando de acordo com o tipo de instala&#xE7;&#xE3;o, como pode ser visto na imagem, aqui ela foi fixada em uma cantoneira met&#xE1;lica e essa foi parafusada sobre a cobertura da casa;</li>
+<li>Essa lista &#xE9; uma base que bate com o projeto disponibilizado no diret&#xF3;rio de <em>estruturas</em>, podendo/devendo ser alterado em fun&#xE7;&#xE3;o do local de instala&#xE7;&#xE3;o e conforme os sensores que ser&#xE3;o implementados, como se pode notar ao comparar a esta&#xE7;&#xE3;o do projeto e a que foi montada, como a que est&#xE1; constru&#xED;da est&#xE1; sobre uma casa onde n&#xE3;o precisa de para-raios (j&#xE1; tem em outra estrutura nas proximidades), e tamb&#xE9;m ainda n&#xE3;o foram implementados sensores solares, ent&#xE3;o a estrutura ficou mais simples, para economizar, tamb&#xE9;m podem construir utilizando sucatas;</li>
+<li>Como pode ser visto na imagem a seguir, &#xE0; esquerda o n&#xFA;mero 1 indica haste adicionada ao projeto para instala&#xE7;&#xE3;o de sensores solares, na esta&#xE7;&#xE3;o constru&#xED;da (&#xE0; direita) n&#xE3;o tem essa haste pois esses sensores ainda n&#xE3;o ficaram prontos para serem implementados. Outro detalhe s&#xE3;o o uso das barras roscadas que aparecem no projeto e na esta&#xE7;&#xE3;o montada, elas servem para prender e regular os fios que fixam e mantem o posicionamento da esta&#xE7;&#xE3;o.</li>
+</ul>
+<p><img src="./img/projeto-2.png" alt="Projeto"></p>
+<h2 class="mume-header" id="banco-de-dados-e-interface-gr%C3%A1fica">BANCO DE DADOS E INTERFACE GR&#xC1;FICA</h2>
+
+<p><img src="./img/grafana.png" alt="Dashboard Grafana"></p>
+<p>O banco de dados e a interface de usu&#xE1;rio foram implementados em um Raspberry Pi&#xAE; utilizado como servidor, onde um algoritmo em Python&#xAE; faz o recebimento e processamento dos dados que s&#xE3;o colocados em banco InfluxDB&#xAE;, nesse servidor foi implementada com Grafana&#xAE; uma interface gr&#xE1;fica que &#xE9; acessada por usu&#xE1;rios atrav&#xE9;s de um navegador web, sendo apresentados os par&#xE2;metros atualizados e s&#xE9;ries temporais, como mostra a figura acima. No diret&#xF3;rio <em>weather-station-server-side</em> &#xE9; poss&#xED;vel ver o script implementado e a documenta&#xE7;&#xE3;o que apresenta como fazer a implementa&#xE7;&#xE3;o dessa parte do projeto.</p>
+<p>Tabela 3: Lista de Materiais para o Servidor.</p>
+<table>
+<thead>
+<tr>
+<th>Quantidade</th>
+<th>Componente</th>
+<th>Valor unit&#xE1;rio (R$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Raspberry Pi 4 Model B 4GB</td>
+<td>640,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Fonte para Raspberry Pi 4</td>
+<td>65,00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Cart&#xE3;o de mem&#xF3;ria classe 10 16GB</td>
+<td>60,00</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="descri%C3%A7%C3%A3o-das-medidaspar%C3%A2metrosdados">Descri&#xE7;&#xE3;o das Medidas/Par&#xE2;metros/Dados</h2>
+
+<p>Para os c&#xF3;digos e hardware dessa vers&#xE3;o da esta&#xE7;&#xE3;o (v2), temos a esta&#xE7;&#xE3;o armazenando localmente, em um arquivo por dia, em hor&#xE1;rio UTC, a seguinte string com dados separados por v&#xED;rgula (CSV):</p>
+<pre class="language-text">20210811155149,37.17,99830.05,19.43,63.45,E,3.99,1.00,snr,snr
+</pre>
+<p>Contendo 10 par&#xE2;metros, sendo 1 de tempo e 9 medidas, ap&#xF3;s armazenar localmente esses par&#xE2;metros, a esta&#xE7;&#xE3;o meteorol&#xF3;gica concatena um par&#xE2;metro a mais que &#xE9; o status da grava&#xE7;&#xE3;o local, um n&#xFA;mero inteiro que pode ser 1, 2 ou 3, que respectivamente significam &quot;ok, armazenamento local operacional&quot;, &quot;n&#xE3;o conseguiu iniciar o cart&#xE3;o de mem&#xF3;ria e consequentemente n&#xE3;o armazenou os dados localmente&quot;, &quot;iniciou o cart&#xE3;o de mem&#xF3;ria, mas n&#xE3;o conseguiu armazenar os dados&quot;. A string com 11 dados separados por v&#xED;rgula e transmitida por MQTT &#xE9; como o exemplo a seguir:</p>
+<pre class="language-text">20210811155149,37.17,99830.05,19.43,63.45,E,3.99,1.00,snr,snr,1
+</pre>
+<p>Tabela 1: Descri&#xE7;&#xE3;o dos dados.</p>
+<table>
+<thead>
+<tr>
+<th>Dado</th>
+<th>Microcontrolador</th>
+<th>Sensor</th>
+<th>Posi&#xE7;&#xE3;o no CSV</th>
+<th>Nome no banco de dados</th>
+<th>Tipo no banco de dados</th>
+<th>Unidade de medida no CSV</th>
+<th>Unidade de medida no Banco de dados</th>
+<th>Observa&#xE7;&#xE3;o</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data e Hor&#xE1;rio da medida</td>
+<td>ESP8266</td>
+<td>----</td>
+<td>1</td>
+<td>----</td>
+<td>----</td>
+<td>----</td>
+<td>----</td>
+<td>No CSV est&#xE1; no formato AAAAMMDDhhmmss*</td>
+</tr>
+<tr>
+<td>Temperatura</td>
+<td>ESP8266</td>
+<td>BMP280</td>
+<td>2</td>
+<td>temperature_bmp</td>
+<td>float</td>
+<td>&#xB0;C</td>
+<td>&#xB0;C</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Press&#xE3;o</td>
+<td>ESP8266</td>
+<td>BMP280</td>
+<td>3</td>
+<td>pressure_bmp</td>
+<td>float</td>
+<td>Pa</td>
+<td>hPa</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Temperatura</td>
+<td>ESP8266</td>
+<td>SHT20</td>
+<td>4</td>
+<td>temperature_sht</td>
+<td>float</td>
+<td>&#xB0;C</td>
+<td>&#xB0;C</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Umidade</td>
+<td>ESP8266</td>
+<td>SHT20</td>
+<td>5</td>
+<td>humidity_sht</td>
+<td>float</td>
+<td>%H</td>
+<td>%H</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Dire&#xE7;&#xE3;o do Vento</td>
+<td>ATtiny85</td>
+<td>Wind Vane</td>
+<td>6</td>
+<td>wind_direction</td>
+<td>int</td>
+<td>Dire&#xE7;&#xE3;o em ponto cardeal</td>
+<td>Dire&#xE7;&#xE3;o em graus</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Velocidade do vento</td>
+<td>ATtiny85</td>
+<td>Anem&#xF4;metro</td>
+<td>7</td>
+<td>anemometer</td>
+<td>float</td>
+<td>Km/h</td>
+<td>Km/h</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Precipita&#xE7;&#xE3;o</td>
+<td>ATtiny85</td>
+<td>Pluvi&#xF4;metro</td>
+<td>8</td>
+<td>pluviometer_raw</td>
+<td>float</td>
+<td>mm</td>
+<td>mm</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Sensor Solar 1</td>
+<td>ATtiny85 Solar</td>
+<td>----</td>
+<td>9</td>
+<td>serial_sensor1</td>
+<td>int</td>
+<td>----</td>
+<td>----</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Sensor Solar 2</td>
+<td>ATtiny85 Solar</td>
+<td>----</td>
+<td>10</td>
+<td>serial_sensor2</td>
+<td>int</td>
+<td>----</td>
+<td>----</td>
+<td>----</td>
+</tr>
+<tr>
+<td>Status mem&#xF3;ria SD</td>
+<td>ESP8266</td>
+<td>----</td>
+<td>11</td>
+<td>sd_memory_status</td>
+<td>int</td>
+<td>----</td>
+<td>----</td>
+<td>1 = Ok, 2 = erro em SD begin, 3 = erro na escrita de dados</td>
+</tr>
+</tbody>
+</table>
+<p>* <strong>Descri&#xE7;&#xE3;o do formato de data e hor&#xE1;rio no CSV</strong><br>
+AAAA = ano, quatro d&#xED;gitos<br>
+MM = m&#xEA;s, dois d&#xED;gitos<br>
+DD = dia, dois d&#xED;gitos<br>
+hh = hora, dois d&#xED;gitos 0 at&#xE9; 24<br>
+mm = minutos, dois d&#xED;gitos<br>
+ss = segundos, dois d&#xED;gitos</p>
+<p>* <strong>Serial Not Received (&quot;snr&quot;)</strong><br>
+Quanto o ESP8266 solicita os dados e eles n&#xE3;o s&#xE3;o recebidos ou chegam danificados, ent&#xE3;o &#xE9; retornado esse valor <code>snr</code>, e quando esse valor chega no script em Python, ele &#xE9; interpretado como null, portanto n&#xE3;o &#xE9; armazenado essa medida no banco de dados.</p>
+<h2 class="mume-header" id="recomenda%C3%A7%C3%B5es-para-futuras-implementa%C3%A7%C3%B5es">Recomenda&#xE7;&#xF5;es para futuras implementa&#xE7;&#xF5;es</h2>
+
+<h4 class="mume-header" id="api-para-acesso-aos-dados">API para acesso aos dados</h4>
+
+<p>Hoje o acesso aos dados pode ser feito acessando diretamente o banco de dados InfluxDB ou via Grafana, mas seria interessante posteriormente ser desenvolvida uma API onde sejam cadastrados usu&#xE1;rios e esses cadastrados possam fazer o acesso aos dados dentro de par&#xE2;metros espec&#xED;ficos, etc, permitindo automa&#xE7;&#xE3;o do processamento de dados ou estudos com scripts.</p>
+<h4 class="mume-header" id="interface-gr%C3%A1fica-publica">Interface gr&#xE1;fica publica</h4>
+
+<p>Se tiver servidor/VPS pode ser implementada alguma interface, p&#xE1;gina web, aberta em que as pessoas possam acessar e visualizar os dados, por exemplo, das &#xFA;ltimas 24h, talvez isso pode ser feito com Grafana, tornando o acesso para visualiza&#xE7;&#xE3;o p&#xFA;blico, ou deixando publico um usu&#xE1;rio e senha sem permiss&#xF5;es administrativas, para apenas visualiza&#xE7;&#xE3;o ou tentar as op&#xE7;&#xF5;es de <a href="https://grafana.com/docs/grafana/latest/sharing/share-dashboard/">share a dashboard</a>.</p>
+<h4 class="mume-header" id="seguran%C3%A7a">Seguran&#xE7;a</h4>
+
+<p><strong>Implementar Backup</strong> das informa&#xE7;&#xF5;es que hoje est&#xE3;o no cart&#xE3;o de mem&#xF3;ria do Raspberry Pi, que se queimar, todas as informa&#xE7;&#xF5;es s&#xE3;o perdidas.<br>
+Implementar <strong>recursos de seguran&#xE7;a</strong> como HTTPs, criptografias e demais recursos que algum profissional da &#xE1;rea ou usu&#xE1;rio possam recomendar.</p>
+<h4 class="mume-header" id="sleep-time-no-esp8266">Sleep Time no ESP8266</h4>
+
+<p>No final do c&#xF3;digo esp8266.ino tem uma linha com a seguinte opera&#xE7;&#xE3;o: <code>sleep_time = abs(59000 - sleep_time);</code>, &#xE9; recomendado, para evitar passar o limite de tr&#xE1;fego do MQTT em poss&#xED;vel sincroniza&#xE7;&#xE3;o das esta&#xE7;&#xF5;es,  variar o valor do <code>59000</code> para cada esta&#xE7;&#xE3;o adicionada, para a esta&#xE7;&#xE3;o 1 foi deixado em <code>60000</code>, a esta&#xE7;&#xE3;o 2 em <code>59000</code>.</p>
+<h2 class="mume-header" id="equipe-e-contato">EQUIPE E CONTATO</h2>
+
+<p>Esse projeto foi desenvolvido por Romildo C Marques&#xB9;, quando aluno de engenharia f&#xED;sica (UNILA), sendo orientado pelo prof. Oswaldo Hideo Ando Junior&#xB2; (GPEnSE) da Universidade Federal da Integra&#xE7;&#xE3;o Latino-Americana (UNILA).</p>
+<p>Contato&#xB9;: <a href="mailto:romildodcm@gmail.com">romildodcm@gmail.com</a><br>
+Contato&#xB2;: <a href="mailto:oswaldo.junior@unila.edu.br">oswaldo.junior@unila.edu.br</a></p>
+<h2 class="mume-header" id="apoio-e-fomento">APOIO E FOMENTO</h2>
+
+<p>Este projeto foi desenvolvido com apoio e fomento de:</p>
+<ul>
+<li>Conselho Nacional de Desenvolvimento Cient&#xED;fico e Tecnol&#xF3;gico - CNPq;</li>
+<li>Universidade Federal da Integra&#xE7;&#xE3;o Latino-Americana (UNILA);</li>
+<li>Grupo de Pesquisa em Energia e Sustentabilidade Energ&#xE9;tica - GPEnSE;</li>
+<li>Programa Agenda Tr&#xED;plice da UNILA pelo apoio e fomento &#xE0; pesquisa.</li>
+</ul>
+<h2 class="mume-header" id="agradecimentos">AGRADECIMENTOS</h2>
+
+<p>Aos amigos e familiares pelo apoio;<br>
+Ao professor Oswaldo Hideo Ando Junior pela orienta&#xE7;&#xE3;o;<br>
+Ao professor Joylan Nunes Maciel por aux&#xED;liar com banco de dados;<br>
+Ao Lucas Teske (@racerxdl) que apresentou e recomendou as tecnologias InfluxDB e Grafana.</p>
+<p><img src="./img/apoio.png" alt></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

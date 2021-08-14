@@ -1,10 +1,10 @@
 # PLATAFORMA DE DADOS METEOROLÓGICOS
 Esse projeto tem por objetivo o desenvolvimento de uma plataforma de dados meteorológicos composta por estações meteorológicas, banco de dados e interface gráfica para análise e monitoramento. Espera-se com esse trabalho formar uma base de dados que permitirá a elaboração de estudos e previsão de geração de energia solar que podem ser aplicados para verificar a viabilidade de instalação de usinas solares, essa plataforma também poderá ser instalada junto de uma unidade geradora para auxiliar no monitoramento de geração, previsões e auxílio na tomada de decisões. Por se tratar de um projeto open source, almeja-se também contribuir com a redução de obstáculos e custos para disseminação e divulgação tecnológica desse tipo de tecnologia.
 
-![Projeto](./projeto.jpg)
+![Projeto](./img/projeto.jpg)
 
 ## ESTAÇÃO METEOROLÓGICA
-![Baia de instrumentação](./baia-de-instrumentos.jpg)
+![Baia de instrumentação](./img/baia-de-instrumentos-v2.jpg)
 Seguindo os conceitos de sensor autônomo e internet das coisas (IoT), foi projetada e construída uma estação meteorológica com microcontrolador ESP8266, programado em C/C++® no ambiente Arduino®, e inicialmente com os sensores de direção do vento, temperatura, umidade, pressão, pluviômetro e anemômetro, posteriormente serão implementados sensores de radiação solar direta e global, através de comunicação serial também é possível a implementação de sensores para monitorar a geração de energia, a estação processa os dados desses sensores, envia para internet através de conexão Wi-Fi® e também armazena localmente em cartão de memória.
 
 Os esquemas elétricos para montagem da estação podem ser acessados no diretório *esquema-eletrico* e os códigos para os microcontroladores estão no diretório *software*, no projeto o circuito foi confeccionado usando uma placa ilhada, abaixo estão as tabelas com materiais necessários, esses sistemas foram integrados e montados na estrutura da estação, como pode ser visto nas imagens, os arquivos com as peças e montagem com o programa *Inventor* estão no diretório *estruturas*, também devem ser inseridos em breve os arquivos do projeto/desenhos técnicos em outros formatos.
@@ -77,11 +77,11 @@ Quantidade | Componente | Valor unitário (R$)
 * Essa lista é uma base que bate com o projeto disponibilizado no diretório de *estruturas*, podendo/devendo ser alterado em função do local de instalação e conforme os sensores que serão implementados, como se pode notar ao comparar a estação do projeto e a que foi montada, como a que está construída está sobre uma casa onde não precisa de para-raios (já tem em outra estrutura nas proximidades), e também ainda não foram implementados sensores solares, então a estrutura ficou mais simples, para economizar, também podem construir utilizando sucatas;
 * Como pode ser visto na imagem a seguir, à esquerda o número 1 indica haste adicionada ao projeto para instalação de sensores solares, na estação construída (à direita) não tem essa haste pois esses sensores ainda não ficaram prontos para serem implementados. Outro detalhe são o uso das barras roscadas que aparecem no projeto e na estação montada, elas servem para prender e regular os fios que fixam e mantem o posicionamento da estação.
 
-![Projeto](./projeto-2.png)
+![Projeto](./img/projeto-2.png)
 
 ## BANCO DE DADOS E INTERFACE GRÁFICA
 
-![Dashboard Grafana](./grafana.png)
+![Dashboard Grafana](./img/grafana.png)
 
 O banco de dados e a interface de usuário foram implementados em um Raspberry Pi® utilizado como servidor, onde um algoritmo em Python® faz o recebimento e processamento dos dados que são colocados em banco InfluxDB®, nesse servidor foi implementada com Grafana® uma interface gráfica que é acessada por usuários através de um navegador web, sendo apresentados os parâmetros atualizados e séries temporais, como mostra a figura acima. No diretório *weather-station-server-side* é possível ver o script implementado e a documentação que apresenta como fazer a implementação dessa parte do projeto.
 
@@ -92,9 +92,60 @@ Quantidade | Componente | Valor unitário (R$)
 1 | Fonte para Raspberry Pi 4 | 65,00
 1 | Cartão de memória classe 10 16GB | 60,00
 
+## Descrição das Medidas/Parâmetros/Dados
+Para os códigos e hardware dessa versão da estação (v2), temos a estação armazenando localmente, em um arquivo por dia, em horário UTC, a seguinte string com dados separados por vírgula (CSV):
+
+    20210811155149,37.17,99830.05,19.43,63.45,E,3.99,1.00,snr,snr
+
+Contendo 10 parâmetros, sendo 1 de tempo e 9 medidas, após armazenar localmente esses parâmetros, a estação meteorológica concatena um parâmetro a mais que é o status da gravação local, um número inteiro que pode ser 1, 2 ou 3, que respectivamente significam "ok, armazenamento local operacional", "não conseguiu iniciar o cartão de memória e consequentemente não armazenou os dados localmente", "iniciou o cartão de memória, mas não conseguiu armazenar os dados". A string com 11 dados separados por vírgula e transmitida por MQTT é como o exemplo a seguir:
+
+    20210811155149,37.17,99830.05,19.43,63.45,E,3.99,1.00,snr,snr,1
+
+Tabela 1: Descrição dos dados.
+Dado | Microcontrolador | Sensor | Posição no CSV | Nome no banco de dados | Tipo no banco de dados | Unidade de medida no CSV | Unidade de medida no Banco de dados | Observação
+------------ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Data e Horário da medida | ESP8266 | ---- | 1 | ---- | ---- | ---- | ---- | No CSV está no formato AAAAMMDDhhmmss*
+Temperatura | ESP8266 | BMP280 | 2 | temperature_bmp | float | °C | °C | ----
+Pressão | ESP8266 | BMP280 | 3 | pressure_bmp | float | Pa | hPa | ----
+Temperatura | ESP8266 | SHT20 | 4 | temperature_sht | float | °C | °C | ----
+Umidade | ESP8266 | SHT20 | 5 | humidity_sht | float | %H | %H | ----
+Direção do Vento | ATtiny85 | Wind Vane | 6 | wind_direction | int | Direção em ponto cardeal | Direção em graus | ----
+Velocidade do vento | ATtiny85 | Anemômetro | 7 | anemometer | float | Km/h | Km/h | ----
+Precipitação | ATtiny85 | Pluviômetro | 8 | pluviometer_raw | float | mm | mm | ----
+Sensor Solar 1 | ATtiny85 Solar | ---- | 9 | serial_sensor1 | int | ---- | ---- | ----
+Sensor Solar 2 | ATtiny85 Solar | ---- | 10 | serial_sensor2 | int | ---- | ---- | ----
+Status memória SD | ESP8266 | ---- | 11 | sd_memory_status | int | ---- | ---- | 1 = Ok, 2 = erro em SD begin, 3 = erro na escrita de dados
+
+\* **Descrição do formato de data e horário no CSV**
+AAAA = ano, quatro dígitos
+MM = mês, dois dígitos
+DD = dia, dois dígitos
+hh = hora, dois dígitos 0 até 24
+mm = minutos, dois dígitos
+ss = segundos, dois dígitos
+
+\* **Serial Not Received ("snr")**
+Quanto o ESP8266 solicita os dados e eles não são recebidos ou chegam danificados, então é retornado esse valor ```snr```, e quando esse valor chega no script em Python, ele é interpretado como null, portanto não é armazenado essa medida no banco de dados.
+
+
+## Recomendações para futuras implementações
+#### API para acesso aos dados
+Hoje o acesso aos dados pode ser feito acessando diretamente o banco de dados InfluxDB ou via Grafana, mas seria interessante posteriormente ser desenvolvida uma API onde sejam cadastrados usuários e esses cadastrados possam fazer o acesso aos dados dentro de parâmetros específicos, etc, permitindo automação do processamento de dados ou estudos com scripts.
+
+#### Interface gráfica publica
+Se tiver servidor/VPS pode ser implementada alguma interface, página web, aberta em que as pessoas possam acessar e visualizar os dados, por exemplo, das últimas 24h, talvez isso pode ser feito com Grafana, tornando o acesso para visualização público, ou deixando publico um usuário e senha sem permissões administrativas, para apenas visualização ou tentar as opções de [share a dashboard](https://grafana.com/docs/grafana/latest/sharing/share-dashboard/).
+
+#### Segurança
+**Implementar Backup** das informações que hoje estão no cartão de memória do Raspberry Pi, que se queimar, todas as informações são perdidas.
+Implementar **recursos de segurança** como HTTPs, criptografias e demais recursos que algum profissional da área ou usuário possam recomendar.
+
+#### Sleep Time no ESP8266
+
+No final do código esp8266.ino tem uma linha com a seguinte operação: ```sleep_time = abs(59000 - sleep_time);```, é recomendado, para evitar passar o limite de tráfego do MQTT em possível sincronização das estações,  variar o valor do ```59000``` para cada estação adicionada, para a estação 1 foi deixado em ```60000```, a estação 2 em ```59000```.
+
 ## EQUIPE E CONTATO
 
-Esse projeto foi desenvolvido por Romildo C Marques¹, aluno de engenharia física (UNILA), sendo orientado pelo prof. Oswaldo Hideo Ando Junior² (GPEnSE) da Universidade Federal da Integração Latino-Americana (UNILA).
+Esse projeto foi desenvolvido por Romildo C Marques¹, quando aluno de engenharia física (UNILA), sendo orientado pelo prof. Oswaldo Hideo Ando Junior² (GPEnSE) da Universidade Federal da Integração Latino-Americana (UNILA).
 
 Contato¹: romildodcm@gmail.com
 Contato²: oswaldo.junior@unila.edu.br
@@ -113,5 +164,5 @@ Ao professor Oswaldo Hideo Ando Junior pela orientação;
 Ao professor Joylan Nunes Maciel por auxíliar com banco de dados;
 Ao Lucas Teske (@racerxdl) que apresentou e recomendou as tecnologias InfluxDB e Grafana.
 
-![](./apoio.png)
+![](./img/apoio.png)
 
